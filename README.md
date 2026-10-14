@@ -1,16 +1,90 @@
-# React + Vite
+# EMS - Employee Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A role-based task management app built with React. Admins create and assign tasks to employees, and employees track and update their progress in real time.
 
-Currently, two official plugins are available:
+**Live Demo:** <your-deployed-link>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+**Admin**
+- Create tasks with title, description, deadline, category and assignee
+- View every employee's task counts (New, Active, Completed, Failed) in one table
+- Dashboard updates instantly after a task is created
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Employee**
+- Personal dashboard with task counters
+- Accept, complete or fail assigned tasks
+- Retry failed tasks and reopen completed ones (blocked after the deadline)
 
-## Expanding the ESLint configuration
+**General**
+- Login with role-based access (Admin / Employee)
+- Persistent data using `localStorage`
+- Responsive, dark-themed UI
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- React (Vite)
+- Tailwind CSS
+- Context API for global state
+- localStorage for data persistence
+
+## Getting Started
+
+```bash
+git clone https://github.com/<your-username>/<repo-name>.git
+cd <repo-name>
+npm install
+npm run dev
+```
+
+Open the local URL shown in the terminal (usually `http://localhost:5173`).
+
+## Demo Credentials
+
+Sample profiles are seeded into `localStorage` on first load.
+
+### Admin
+
+| Email | Password |
+| --- | --- |
+| admin@company.com | 123 |
+
+### Employees
+
+| Name | Email | Password |
+| --- | --- | --- |
+| Alex | alex.smith@company.com | 123 |
+| Jordan | jordan.lee@company.com | 123 |
+| Casey | casey.jones@company.com | 123 |
+| Taylor | taylor.brown@company.com | 123 |
+| Morgan | morgan.davis@company.com | 123 |
+
+> These are demo accounts for testing only.
+
+## Project Structure
+
+```
+src/
+├── components/     # Dashboards, CreateTask, AllTask, TaskList, etc.
+├── context/        # AuthProvider (global state + task actions)
+├── utils/          # localStorage helpers and seed data
+├── App.jsx
+└── main.jsx
+```
+
+## How It Works
+
+Global state lives in `AuthProvider`. Actions such as `addTask` and `updateTaskStatus` update both React state and `localStorage`, so every component re-renders immediately without a page reload.
+
+## Resetting Data
+
+To restore the demo data, run this in the browser console and refresh:
+
+```js
+localStorage.clear();
+```
+
+## Author
+
+**Amritesh Kumar**
+[GitHub](https://github.com/Amritesh-95)
