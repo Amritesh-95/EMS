@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #0a0909;
+}
+
+#task-list::-webkit-scrollbar {
+  display:none 
+}
+
+/* #all-tasks::-webkit-scrollbar {
+  display:none
+} */
+
+/* Base scrollbar styling */
+.dynamic-scroller::-webkit-scrollbar {
+  width: 16px; 
+}
+.dynamic-scroller::-webkit-scrollbar-track {
+  background: #928c8c; 
+  border-radius: 10px;
+}
+.dynamic-scroller::-webkit-scrollbar-thumb {
+  background-color: #c7d2fe; 
+  border-radius: 10px;
+  border: 2px solid #f1f1f1; 
+  background-repeat: repeat-y;
+  background-position: center;
+  background-size: 16px 10px;
+  
+  /* DEFAULT: DOWN ARROW SVG */
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 3L8 8L13 3' stroke='%233730a3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* MODIFIER: UP ARROW SVG */
+.dynamic-scroller.scrolling-up::-webkit-scrollbar-thumb {
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 9L8 4L13 9' stroke='%233730a3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.dynamic-scroller::-webkit-scrollbar-thumb:hover {
+  background-color: #a5b4fc; 
+}
