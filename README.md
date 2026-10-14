@@ -2,7 +2,7 @@
 
 A role-based task management app built with React. Admins create and assign tasks to employees, and employees track and update their progress in real time.
 
-**Live Demo:** (ems-shadow.vercel.app)
+**Live Demo:** (https://ems-shadow.vercel.app)
 
 ## Features
 
